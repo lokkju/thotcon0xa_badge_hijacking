@@ -1,13 +1,13 @@
 # THOTCON 0xA Badge Hijacking #
 
-The Thotcon 0xA badge runs an ESP32 chip; the stock badge firmware process is:
+The Thotcon 0xA badge runs an ESP32 chip; the final badge firmware process is:
 
 - connect to the THOTCON-Static WPA2-PSK secured SSID, with password thotcon0xa
 - check for an update at http://irl.depaul.edu/TC0xA.bin, apply if it exists and is a new version
 - connect to an IRC command and control server at irc://irl.depaul.edu:6969/#c2c
 - execute any commands in the topic of the channel, or that are posted in the channel.
 
-This project hijacks this process, creating an evil twin access point and running our own IRC and HTTP servers to capture and control and badge we can force to connect to us.
+This project hijacks this process, creating an evil twin access point and running our own IRC and HTTP servers to capture and control any badge we can force to connect to us.
 
 ### Completed ###
 - Evil Twin Access Point
@@ -31,6 +31,5 @@ It is expected you are running this on Kali Linux 2019.1; adjust accordingly.  E
 - `sudo python server.py`
 - `irssi -c irl.depaul.edu`
 
-## Firmware Versions ##
-- original_firmware.bin => first firmware dump from the badge
-
+### Forcing your own firmware to be loaded
+To force your own firmware to be loaded, you'll have to either generate new firmware (not suggested) or edit an existing firmware (see the firmware directory); then just put that edited firmware as TC0xA.bin in this directory, and the python script will serve it.
