@@ -9,6 +9,8 @@ The Thotcon 0xA badge runs an ESP32 chip; the final badge firmware process is:
 
 This project hijacks this process, creating an evil twin access point and running our own IRC and HTTP servers to capture and control any badge we can force to connect to us.
 
+Over the course of the conference, I was able to capture at least 40 badges - and that was without even deauthing.
+
 ### Completed ###
 - Evil Twin Access Point
 - IRC server
@@ -18,6 +20,7 @@ This project hijacks this process, creating an evil twin access point and runnin
 - Limiting client types to be badges only
 - New firmware that contains new update or IRC CnC urls
 - Deauthing badges that are connected to other BSSIDs
+- New firmware that spreads itself, as the ESP32 can emulated an AP itself.
 
 ## Running the project ##
 It is expected you are running this on Kali Linux 2019.1; adjust accordingly.  Either run each command in a new terminal or background the processes
